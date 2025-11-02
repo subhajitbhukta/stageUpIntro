@@ -60,25 +60,25 @@ const App = ({ onComplete, onPlatformSelect }) => {
   }, []);
 
   const handlePlatformSelect = (platform) => {
-    setSelectedPlatform(platform.id);
-    setPhase('selected');
-    
+  setSelectedPlatform(platform.id);
+
+  // if external link -> open new tab immediately and do not fade out
+  if (platform.link) {
+    window.open(platform.link, "_blank");
+    return;
+  }
+
+  // else internal navigation logic (if any)
+  setPhase('selected');
+  setTimeout(() => {
+    setPhase('fade-out');
     setTimeout(() => {
-      setPhase('fade-out');
-      setTimeout(() => {
-        if (platform.link) {
-          window.location.href = platform.link;
-        } else {
-          // Scroll to top before showing the app
-          window.scrollTo({ top: 0, behavior: 'instant' });
-          onComplete(platform.id);
-        }
-        if (onPlatformSelect) {
-          onPlatformSelect(platform.id);
-        }
-      }, 500);
-    }, 800);
-  };
+      onComplete(platform.id);
+      if (onPlatformSelect) onPlatformSelect(platform.id);
+    }, 500);
+  }, 800);
+};
+
 
   return (
     <div className={` inset-0 z-50 flex flex-col bg-white transition-all duration-700 ${
