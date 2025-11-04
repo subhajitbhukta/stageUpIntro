@@ -386,10 +386,46 @@ const App = ({ onComplete, onPlatformSelect }) => {
           .animate-scroll:hover { animation-play-state: paused; }
         `}</style>
 
-        <div className="relative z-10  w-full px-6 mx-auto flex-1 flex flex-col justify-center py-8">
-          {/* Header */}
-          <div className={`text-center mb-12 transition-all duration-700 delay-100 ${logoVisibility[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <h1 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-3 leading-tight tracking-tight">
+        <div className="relative z-10  w-full px-5 sm:px-6 mx-auto flex-1 flex flex-col justify-center py-2">
+         {/* Header */}
+          <div className={`relative text-center mb-12 transition-all duration-700 delay-100 }`}>
+            {/* Certification Logos - Top Right */}
+            <div className="sm:absolute sm:right-4 flex justify-center top-0 items-center gap-3">
+              <div className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg">
+                <img 
+                  src="https://www.arenasolutions.com/wp-content/uploads/what-is-iso-9001-compliance.png" 
+                  alt="ISO Certified" 
+                  className="w-full h-full object-contain"
+                  title="ISO Certified"
+                />
+              </div>
+              <div className="w-14 h-14 rounded-full overflow-hidden bg-white/90 backdrop-blur-sm border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg">
+                <img 
+                  src="https://5.imimg.com/data5/SELLER/Default/2020/8/PQ/PG/RM/111471935/msme-registration-service-500x500.jpg" 
+                  alt="NCS Certified" 
+                  className="w-full h-full object-contain"
+                  title="NCS Certified"
+                />
+              </div>
+              <div className="w-14 h-14 overflow-hidden rounded-full bg-white/90 backdrop-blur-sm border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg">
+                <img 
+                  src="https://gowindinternational.com/wp-content/uploads/2025/05/DGFT.png" 
+                  alt="DGFT Certified" 
+                  className="w-full h-full object-contain"
+                  title="DGFT Certified"
+                />
+              </div>
+              <div className="w-14 h-14 overflow-hidden rounded-full bg-white/90 backdrop-blur-sm border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg">
+                <img 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcCrpzGPB9h0k5isIKYD23fFFP8u9CatVGA2c2-rmaTrDX5wRAjvfOMojrglo7PxSiduM&usqp=CAU" 
+                  alt="NCS Accredited" 
+                  className="w-full h-full object-contain "
+                  title="NCS Accredited"
+                />
+              </div>
+            </div>
+
+            <h1 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-3 mt-4 sm:mt-16 leading-tight tracking-tight">
               StageUp – Empowering the Future Coders of India
             </h1>
             <p className="text-gray-600 text-lg md:text-xl mb-4 font-medium">
@@ -399,7 +435,7 @@ const App = ({ onComplete, onPlatformSelect }) => {
           </div>
 
           {/* Platform Cards */}
-          <div className="grid grid-cols-1 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {platforms.map((platform, index) => (
               <div
                 key={platform.id}
@@ -457,63 +493,112 @@ const App = ({ onComplete, onPlatformSelect }) => {
         </div>
 
         {/* Scrolling certification badges section */}
-        <div className={`relative z-10 py-3 border-t border-orange-200 bg-white/70 backdrop-blur-sm transition-all duration-700 delay-300 ${logoVisibility[3] ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="max-w-7xl mx-auto px-4">
-            <h3 className="text-center text-gray-500 text-xs font-medium mb-4 tracking-wider uppercase">
+        <div className={`relative z-10 py-6 border-t border-orange-200 bg-white/70 backdrop-blur-sm transition-all duration-700 delay-300 ${logoVisibility[1] ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="w-full px-4">
+            <h3 className="text-center text-gray-500 text-sm font-medium mb-6 tracking-wider uppercase">
               We Are Supported By
             </h3>
 
             <div className="relative overflow-hidden mb-2">
-              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white/70 to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white/70 to-transparent z-10"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/70 to-transparent z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white/70 to-transparent z-10"></div>
 
               <div className="flex animate-scroll">
-                <div className="flex items-center gap-6 px-3">
-                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg px-5 py-3 border border-orange-200 hover:border-orange-300 transition-all duration-300">
-                    <div className="text-gray-700 font-medium text-sm whitespace-nowrap">Google for Education</div>
+                {/* First Set */}
+                <div className="flex items-center gap-8 px-4">
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://images.squarespace-cdn.com/content/v1/586fa54b6b8f5b0e75049b90/1591119029204-5XK9IQ794J82WFIMTF0D/google+for+ed.png" 
+                      alt="Google for Education" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg px-5 py-3 border border-orange-200 hover:border-orange-300 transition-all duration-300">
-                    <div className="text-gray-700 font-medium text-sm whitespace-nowrap">Scratch</div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://juniortech.org/wp-content/uploads/2020/09/Scratch-cat-logo-300x300px.png" 
+                      alt="Scratch" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg px-5 py-3 border border-orange-200 hover:border-orange-300 transition-all duration-300">
-                    <div className="text-gray-700 font-medium text-sm whitespace-nowrap">CodePen</div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvzVXAptl-ucJ6LkNUjR3GWZQsYkJi2FJOl6aFzkzWdlA3hgsj0VXdkbpO1BabZtuhMcg&usqp=CAU" 
+                      alt="CodePen" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg px-5 py-3 border border-orange-200 hover:border-orange-300 transition-all duration-300">
-                    <div className="text-gray-700 font-medium text-sm whitespace-nowrap">Khan Academy</div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-2 py-2 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHxPC-DGRTX_9_vQFhQbAtNNV6ccTxgOnuQ&s" 
+                      alt="Khan Academy" 
+                      className="h-20 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6 px-3">
-                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg px-5 py-3 border border-orange-200 hover:border-orange-300 transition-all duration-300">
-                    <div className="text-gray-700 font-medium text-sm whitespace-nowrap">Google for Education</div>
+                {/* Second Set */}
+                <div className="flex items-center gap-8 px-4">
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://images.squarespace-cdn.com/content/v1/586fa54b6b8f5b0e75049b90/1591119029204-5XK9IQ794J82WFIMTF0D/google+for+ed.png" 
+                      alt="Google for Education" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg px-5 py-3 border border-orange-200 hover:border-orange-300 transition-all duration-300">
-                    <div className="text-gray-700 font-medium text-sm whitespace-nowrap">Scratch</div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://juniortech.org/wp-content/uploads/2020/09/Scratch-cat-logo-300x300px.png" 
+                      alt="Scratch" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg px-5 py-3 border border-orange-200 hover:border-orange-300 transition-all duration-300">
-                    <div className="text-gray-700 font-medium text-sm whitespace-nowrap">CodePen</div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvzVXAptl-ucJ6LkNUjR3GWZQsYkJi2FJOl6aFzkzWdlA3hgsj0VXdkbpO1BabZtuhMcg&usqp=CAU" 
+                      alt="CodePen" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-lg px-5 py-3 border border-orange-200 hover:border-orange-300 transition-all duration-300">
-                    <div className="text-gray-700 font-medium text-sm whitespace-nowrap">Khan Academy</div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-2 py-2 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHxPC-DGRTX_9_vQFhQbAtNNV6ccTxgOnuQ&s" 
+                      alt="Khan Academy" 
+                      className="h-20 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Certifications bar */}
-        <div className={`relative z-10 py-2 bg-orange-600 transition-all duration-700 delay-400 ${logoVisibility[3] ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="flex items-center justify-center gap-6 flex-wrap text-xs">
-              <div className="flex items-center gap-1.5 text-white font-medium">
-                <span className="text-sm">✓</span>
-                <span>ISO 9001:2015</span>
-              </div>
-              <div className="w-px h-3 bg-orange-400"></div>
-              <div className="flex items-center gap-1.5 text-white font-medium">
-                <span className="text-sm">🏢</span>
-                <span>MSME Registered</span>
+                {/* Third Set */}
+                <div className="flex items-center gap-8 px-4">
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://images.squarespace-cdn.com/content/v1/586fa54b6b8f5b0e75049b90/1591119029204-5XK9IQ794J82WFIMTF0D/google+for+ed.png" 
+                      alt="Google for Education" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://juniortech.org/wp-content/uploads/2020/09/Scratch-cat-logo-300x300px.png" 
+                      alt="Scratch" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvzVXAptl-ucJ6LkNUjR3GWZQsYkJi2FJOl6aFzkzWdlA3hgsj0VXdkbpO1BabZtuhMcg&usqp=CAU" 
+                      alt="CodePen" 
+                      className="h-12 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                  <div className="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-xl px-2 py-2 border-2 border-orange-200 hover:border-orange-300 transition-all duration-300 group min-w-[200px]">
+                    <img 
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHxPC-DGRTX_9_vQFhQbAtNNV6ccTxgOnuQ&s" 
+                      alt="Khan Academy" 
+                      className="h-20 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
