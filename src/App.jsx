@@ -12,7 +12,7 @@ const App = ({ onComplete, onPlatformSelect }) => {
   const platforms = [
     { id: 'kids', name: 'Kids StageUp', icon: '🎨', description: 'Creative Learning for Young Minds', link: 'https://stageup.in/' },
     { id: 'school', name: 'School StageUp', icon: '📚', description: 'Comprehensive School Education', link: 'https://stageup.in/' },
-    { id: 'adv', name: 'ADV StageUp', icon: '🎯', description: 'Advanced Skill Development', link: "https://stageuppro.netlify.app/" },
+    { id: 'adv', name: 'ADV StageUp', icon: '🎯', description: 'Advanced Skill Development Mastery', link: "https://stageuppro.netlify.app/" },
     { id: 'pro', name: 'Pro StageUp', icon: '💼', description: 'Professional Growth & Development', link: "https://stageuppro.netlify.app/" }
   ];
 
