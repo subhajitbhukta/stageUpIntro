@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import advlogo from './assets/adv.png';
+import schoollogo from './assets/school.png';
+import kidslogo from './assets/kids.png';
+import prologo from './assets/pro.png';
 
 const App = ({ onComplete, onPlatformSelect }) => {
   const [phase, setPhase] = useState('fade-in');
@@ -10,10 +14,10 @@ const App = ({ onComplete, onPlatformSelect }) => {
   const mouseRef = useRef({ x: 0, y: 0 });
 
   const platforms = [
-    { id: 'kids', name: 'Kids StageUp', icon: '🎨', description: 'Creative Learning for Young Minds', link: 'https://stageup.in/' },
-    { id: 'school', name: 'School StageUp', icon: '📚', description: 'Comprehensive School Education', link: 'https://stageup.in/' },
-    { id: 'adv', name: 'ADV StageUp', icon: '🎯', description: 'Advanced Skill Development Mastery', link: "https://stageuppro.netlify.app/" },
-    { id: 'pro', name: 'Pro StageUp', icon: '💼', description: 'Professional Growth & Development', link: "https://stageuppro.netlify.app/" }
+    { id: 'kids', name: 'Kids StageUp', icon: kidslogo, description: 'Creative Learning for Young Minds', link: 'https://stageup.in/' },
+    { id: 'school', name: 'School StageUp', icon: schoollogo, description: 'Comprehensive School Education', link: 'https://stageup.in/' },
+    { id: 'adv', name: 'ADV StageUp', icon: advlogo, description: 'Advanced Skill Development Mastery', link: "https://stageuppro.netlify.app/" },
+    { id: 'pro', name: 'Pro StageUp', icon: prologo, description: 'Professional Growth & Development', link: "https://stageuppro.netlify.app/" }
   ];
 
   // ---------- Three.js scene ----------
@@ -461,8 +465,8 @@ const App = ({ onComplete, onPlatformSelect }) => {
                 `}>
                   {/* Icon */}
                   <div className="flex justify-center mb-6">
-                    <div className="w-20 h-20 bg-orange-50 rounded-full flex items-center justify-center text-4xl">
-                      {platform.icon}
+                    <div className="w-24 h-20 rounded-2xl bg-orange-50 flex items-center justify-center text-4xl">
+                      <img src={platform.icon} alt="" className=''  style={{ mixBlendMode: "multiply" }} />
                     </div>
                   </div>
 
